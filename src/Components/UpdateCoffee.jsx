@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import Header from "./Header";
 
 
 const UpdateCoffee = () => {
@@ -22,7 +23,7 @@ const UpdateCoffee = () => {
         console.log(updatedCoffee);
 
         // send data to the server
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://coffee-store-server-mu-eight.vercel.app/coffee/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -44,6 +45,7 @@ const UpdateCoffee = () => {
     }
     return (
         <div className="my-10">
+            <Header></Header>
             <div className="text-center mb-8">
                 <h3 className="text-3xl font-extrabold text-[#374151]">Update This Coffee</h3>
             </div>

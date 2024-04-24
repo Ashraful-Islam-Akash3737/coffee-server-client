@@ -18,37 +18,37 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    children: [
-      {
-        path: "/",
-        element: <App />,
-        loader: () => fetch("http://localhost:5000/coffee"),
-
-      },
-      {
-        path: "/addCoffee",
-        element: <AddCoffee />,
-      },
-      {
-        path: "/updateCoffee/:id",
-        element: <UpdateCoffee />,
-        loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
-      },
-      {
-        path: "/signup",
-        element: <SignUp />,
-      },
-      {
-        path: "/signin",
-        element: <SignIn />,
-      },
-      {
-        path: "/users",
-        element: <Users />,
-        loader: () => fetch('http://localhost:5000/user')
-      },
-    ]
   },
+  {
+    path: "/",
+    element: <App />,
+    loader: () => fetch("https://coffee-store-server-mu-eight.vercel.app/coffee"),
+
+  },
+  {
+    path: "/addCoffee",
+    element: <AddCoffee />,
+  },
+  {
+    path: "/updateCoffee/:id",
+    element: <UpdateCoffee />,
+    loader: ({ params }) => fetch(`https://coffee-store-server-mu-eight.vercel.app/coffee/${params.id}`)
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
+  },
+  {
+    path: "/users",
+    element: <Users />,
+    loader: () => fetch('https://coffee-store-server-mu-eight.vercel.app/user')
+  },
+
+
 
 ]);
 

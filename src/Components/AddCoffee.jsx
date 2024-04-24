@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2'
+import Header from './Header';
 
 
 const AddCoffee = () => {
@@ -18,7 +19,7 @@ const AddCoffee = () => {
         console.log(newCoffee);
 
         // send data to the server
-        fetch('http://localhost:5000/coffee', {
+        fetch('https://coffee-store-server-mu-eight.vercel.app/coffee', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -40,6 +41,7 @@ const AddCoffee = () => {
     }
     return (
         <div className="px-4 md:px-8 py-8 md:py-16">
+            <Header></Header>
             <div className="bg-[#F4F3F0] py-8 md:px-8 rounded-xl mx-auto">
                 <div className="text-center space-y-8 mb-8">
                     <h3 className="text-3xl font-extrabold text-[#374151]">Add New coffee</h3>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Header from "./Header";
 
 
 const Users = () => {
@@ -8,7 +9,7 @@ const Users = () => {
     const [users, setUsers] = useState(loadedUsers);
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/user/${id}`, {
+        fetch(`https://coffee-store-server-mu-eight.vercel.app/user/${id}`, {
             method: "DELETE"
         })
         .then(res=> res.json())
@@ -25,6 +26,7 @@ const Users = () => {
     }
     return (
         <div>
+            <Header></Header>
             <h2>users: {loadedUsers.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table">
